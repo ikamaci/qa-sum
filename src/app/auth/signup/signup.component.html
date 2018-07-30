@@ -1,0 +1,65 @@
+<mat-card>
+  <mat-card-title style="text-align: center">Kayıt Ol</mat-card-title>
+  <form (submit)="onSignup(signupForm)" #signupForm="ngForm" >
+    <mat-form-field>
+      <a>Ad</a>
+
+      <input
+        matInput name="firstname"
+        ngModel
+
+        #firstnameInput = "ngModel"
+        required
+      >
+
+      <mat-error *ngIf="firstnameInput">Lütfen isminizi giriniz </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <a>Soyad</a>
+
+      <input
+        matInput name="lastname"
+        ngModel
+
+        #lastnameInput = "ngModel"
+        required
+      >
+
+      <mat-error *ngIf="lastnameInput">Lütfen soyisminizi giriniz </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <a>E-Mail</a>
+
+      <input
+        matInput name="email"
+        ngModel type="email"
+
+        #emailInput = "ngModel"
+        required email
+      >
+      <i class="fa fa-envelope prefix grey-text"></i>
+      <mat-error *ngIf="emailInput">Lütfen geçerli bir E-Mail adresi giriniz </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <a>Şifre</a>
+
+      <input
+        matInput name="password"
+        ngModel
+        type="password"
+
+        #passwordInput="ngModel"
+        required
+      >
+      <i class="fa fa-lock prefix grey-text"></i>
+      <mat-error *ngIf="passwordInput" >Lütfen şifrenizi giriniz</mat-error>
+    </mat-form-field>
+    <button
+      color="primary"
+      mat-raised-button
+      type="submit"
+    >Kayıt</button>
+  </form>
+
+</mat-card>
+

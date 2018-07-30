@@ -1,0 +1,23 @@
+:host{
+  display: block;
+  margin-top: 1rem;
+}
+.info-text{
+  text-align: center;
+}
+mat-accordion{
+  background-color: transparent;
+  opacity: 2;
+}
+mat-expansion-panel{
+  background-color: transparent;
+}
+mat-expansion-panel-header{
+  background-color: transparent;
+}
+mat-paginator{
+  background-color: transparent;
+}
+mat-card{
+  margin-top: 1rem;
+}

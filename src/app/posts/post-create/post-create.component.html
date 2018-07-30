@@ -1,0 +1,121 @@
+
+
+    <div class="row">
+      <div class="col-sm-6">
+      <li *ngFor="let parag of paragraphs">
+      <a onmouseover="hover($event.target.innerText)"  ngClass="{selected:  }" style=";" #myelement (click)="paragclicked($event.target.innerText)"  > {{parag}} </a>
+    </li>
+  </div>
+  <div class="col-sm-6">
+    <p>{{this.selectedparag}}</p>
+    <mat-tab-group>
+      <mat-tab label="Soru - Cevap oluşturun">
+        <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+          <mat-form-field>
+            <p>Soru</p>
+            <textarea
+              rows="3"
+              matInput
+              name="question"
+              ngModel
+
+              #question = "ngModel"
+            > </textarea>
+
+            <mat-error *ngIf="question.invalid" >Bu alan boş bırakılamaz</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <p>Cevap </p>
+            <textarea
+              rows="3"
+              matInput
+              name="answer"
+              ngModel
+
+              #answer = "ngModel"
+            > </textarea>
+
+            <mat-error *ngIf="answer.invalid" >Bu alan boş bırakılamaz</mat-error>
+          </mat-form-field>
+          <button
+            color="primary"
+            mat-raised-button
+            type="submit"
+          >Soru Cevabı Gönder</button>
+        </form>
+
+      </mat-tab>
+      <mat-tab label="Metnin Özetini oluşturun">
+        <form (submit)="onAddSummary(postForm2)" #postForm2="ngForm">
+          <mat-form-field>
+            <p> Özet</p>
+            <textarea
+              rows="10"
+              matInput
+              name="summary"
+              ngModel
+
+              #summary = "ngModel"
+            > </textarea>
+
+            <mat-error *ngIf="summary.invalid" >Bu alan boş bırakılamaz</mat-error>
+          </mat-form-field>
+          <button
+            color="primary"
+            mat-raised-button
+            type="submit"
+          >Özeti Gönder</button>
+        </form>
+
+      </mat-tab>
+    </mat-tab-group>
+
+  </div>
+
+</div>
+
+
+
+<!--
+<mat-card>
+  <mat-card-title style="text-align: center; font-family: 'Californian FB'">Paragraph Parser</mat-card-title>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-tab-group>
+      <mat-tab label="Enter a text by hand">
+        <mat-form-field>
+      <textarea
+        rows="3"
+        matInput
+        name="content"
+        ngModel
+        placeholder="Please enter content"
+        #content = "ngModel"
+      > </textarea>
+        <mat-error *ngIf="content.invalid" >Please enter content</mat-error>
+      </mat-form-field> </mat-tab>
+      <mat-tab label="Enter a url of text">
+        <div style="margin-top: 6rem">
+
+          <input  type="url" placeholder="Enter a url " ngModel name="urlInput" #urlInput = "ngModel">
+        </div>
+      </mat-tab>
+      <mat-tab label="File Upload">
+        <div style="margin-top: 6rem">
+        <input type="file" accept="text/docx" placeholder="Choose a file " multiple (change)="openFile($event)" ngModel name="fileInput" #fileInput = "ngModel" multiple base-sixty-four-input>
+
+        </div>
+
+      </mat-tab>
+    </mat-tab-group>
+
+    <button
+      color="primary"
+      mat-raised-button
+      type="submit"
+    >Submit</button>
+  </form>
+
+
+</mat-card>
+
+-->

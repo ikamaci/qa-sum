@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-sm-6">
+    <h1 style="text-align: center">Sorularım-Cevaplarım</h1>
+    <mat-card  *ngFor="let qa of this.QAs" style="align-self: left">
+      <mat-card-title style="text-align: center"> Paragraf </mat-card-title>
+      <mat-card-content> {{qa.paragraph}}</mat-card-content>
+      <mat-card-title style="text-align: center"> Soru </mat-card-title>
+      <mat-card-content> {{qa.question}}</mat-card-content>
+      <mat-card-title style="text-align: center"> Cevap </mat-card-title>
+      <mat-card-content>{{qa.answer}}</mat-card-content>
+    </mat-card>
+
+  </div>
+  <div class="col-sm-6">
+    <h1 style="text-align: center">Özetlerim</h1>
+    <mat-card *ngFor="let sum of this.SUMs">
+      <mat-card-title style="text-align: center"> Karar Numarası </mat-card-title>
+      <mat-card-content> {{sum.kararId}}</mat-card-content>
+      <mat-card-title style="text-align: center"> Özet </mat-card-title>
+      <mat-card-content>{{sum.summary}}</mat-card-content>
+    </mat-card>
+
+  </div>
+
+</div>
+
+
+
+<!--
+<div>
+  <md-Navbar>
+    <Navbar.Header>
+      <Navbar.Brand>
+        <a href="/"><img src="../src/img/aisolt.png" height="23px"/></a>
+      </Navbar.Brand>
+      <Navbar.Toggle />
+    </Navbar.Header>
+    <Navbar.Collapse>
+      <Nav>
+        <NavItem eventKey={1} href="/question">
+          Soru-Cevap / Özet
+        </NavItem>
+        <NavItem eventKey={2} href="/profile">
+          Profilim
+        </NavItem>
+      </Nav>
+      <Nav pullRight>
+        <NavItem eventKey={1} href="/login">
+          Çıkış Yap
+        </NavItem>
+      </Nav>
+    </Navbar.Collapse>
+  </md-Navbar>
+  <Grid>
+    <Row className="show-grid profile text-center">
+      <Col sm={6} md={6}>
+      <code>Soru-Cevaplarım</code>
+      <br />
+      <ul>
+        <li>{this.state.qa}</li>
+      </ul>
+      </Col>
+      <Col sm={6} md={6}>
+      <code>Özetlerim</code>
+      <br />
+      Deneme
+      </Col>
+    </Row>
+  </Grid>
+</div>
+-->

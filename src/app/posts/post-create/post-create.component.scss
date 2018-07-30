@@ -1,0 +1,27 @@
+li.selected {
+  color: red;
+}
+
+textarea,mat-form-field,input{
+  width: 100%;
+  display: block;
+}
+
+button{
+  margin-top: 3rem;
+}
+mat-tab-group{
+  margin-inside: auto;
+}
+mat-tab{
+
+ margin: auto ;
+}
+mat-card{
+  background-color: #e1e1e1;
+}
+card{
+  margin-top: 10px;
+  width: auto;
+  margin: auto;
+}

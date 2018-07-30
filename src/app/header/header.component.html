@@ -1,0 +1,17 @@
+<div class="row" style="background-color: rgb(73, 150, 224)">
+  <mat-toolbar >
+    <a class="col-sm-4" href="/"><img src="../../assets/aisolt.png" height="23px"/></a>
+
+    <span class="spacer" ></span>
+    <ul class="row">
+      <li  *ngIf="isauth"><a mat-stroked-button  routerLink="/profile" routerLinkActive="mat-accent">Profilim</a></li>
+      <li  *ngIf="isauth"><a mat-stroked-button routerLink="/create" routerLinkActive="mat-accent"> Soru-Cevap-Özet</a></li>
+      <li *ngIf="!isauth"><a mat-stroked-button routerLink="/login" routerLinkActive="mat-accent"> Giriş Yap</a></li>
+      <li *ngIf="!isauth"><a mat-stroked-button routerLink="/signup" routerLinkActive="mat-accent"> Kayıt Ol</a></li>
+      <li  *ngIf="isauth"><button mat-button (click)="onLogout()" > Çıkış Yap</button></li>
+    </ul>
+
+
+  </mat-toolbar>
+
+</div>
